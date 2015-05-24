@@ -1,0 +1,190 @@
+---
+Getting and Cleaning Data Course Project CodeBook 
+
+The site where the data was obtained: 
+http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
+
+The data for the project: 
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
+ 
+The data includes measurements for Triaxial acceleration and Triaxial Angular velocity.  The data also includes which activity the measurement was created from (Each person performed six activities - WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) and the data is collected from 30 volunteers.
+
+The data is broken into 2 sets by the experimenters- training data and test data.  
+
+The following data is read into the script:
+
+- 'train/X_train.txt': Set of measurements from the "Training Group"
+
+- 'train/y_train.txt': Set of activity labels from the "Training Group".
+
+- 'test/X_test.txt': Set of measurements from the "Test Group"
+
+- 'test/y_test.txt': Set of activity labels from the "Test Group".
+
+- 'train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
+
+- 'test/subject_test.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
+
+For the purpose of this collection, training data and test data is combined.
+
+--------------------------------------------------------
+
+Script specifics:
+
+jdata is the raw combined test and training measurements
+jlabel is the raw combined test and training activity Ids
+jsubject is the raw combined test and training volunteer Ids
+
+featureNames is the specific measurements variables.  See specifics below which ties the variable names to their specific meanings.
+
+actNames is the specific activity labels: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
+
+meanstds is a logical vector of the variables which are means and standard deviation measurements.
+
+datmeanstd is data frame of the raw data which are only means and standard deviation measurements.
+
+Using datmeanstd create tidy data sets for the measurements by activity and by subject.
+
+Measurements by Activity and labeled by its 'descriptive name' which is exactly the same name provided in the data is written out to file  "tidytxtbyactivity.txt"
+
+Measurements by Subject and labeled by its "Volunteer Id" is written out to file "tidytxtbysubject.txt"
+
+ 
+------------------------------------------------
+ 
+Detailed description of each measurement and this is the data collected and reported in this assignment.
+ 
+Time domain body acceleration mean along X, Y, and Z: 
+MeanTimeBodyAccMeanX 
+MeanTimeBodyAccMeanY 
+MeanTimeBodyAccMeanZ 
+
+Time domain body acceleration standard deviation along X, Y, and Z: 
+MeanTimeBodyAccStdDevX 
+MeanTimeBodyAccStdDevY 
+MeanTimeBodyAccStdDevZ 
+
+Time domain gravity acceleration mean along X, Y, and Z: 
+MeanTimeGravityAccMeanX 
+MeanTimeGravityAccMeanY 
+MeanTimeGravityAccMeanZ 
+
+Time domain gravity acceleration standard deviation along X, Y, and Z: 
+MeanTimeGravityAccStdDevX 
+MeanTimeGravityAccStdDevY 
+MeanTimeGravityAccStdDevZ 
+
+Time domain body jerk mean along X, Y, and Z: 
+MeanTimeBodyAccJerkMeanX 
+MeanTimeBodyAccJerkMeanY 
+MeanTimeBodyAccJerkMeanZ 
+
+Time domain body jerk standard deviation along X, Y, and Z: 
+MeanTimeBodyAccJerkStdDevX 
+MeanTimeBodyAccJerkStdDevY 
+MeanTimeBodyAccJerkStdDevZ 
+
+Time domain gyroscope mean along X, Y, and Z: 
+MeanTimeBodyGyroMeanX 
+MeanTimeBodyGyroMeanY 
+MeanTimeBodyGyroMeanZ 
+
+Time domain gyroscope standard deviation along X, Y, and Z: 
+MeanTimeBodyGyroStdDevX 
+MeanTimeBodyGyroStdDevY 
+MeanTimeBodyGyroStdDevZ 
+
+Time domain gyroscope jerk mean along X, Y, and Z: 
+MeanTimeBodyGyroJerkMeanX 
+MeanTimeBodyGyroJerkMeanY 
+MeanTimeBodyGyroJerkMeanZ 
+
+Time domain gyroscope jerk standard deviation along X, Y, and Z: 
+MeanTimeBodyGyroJerkStdDevX 
+MeanTimeBodyGyroJerkStdDevY 
+MeanTimeBodyGyroJerkStdDevZ 
+
+Time domain body acceleration magnitude mean: 
+MeanTimeBodyAccMagMean 
+
+Time domain body acceleration magnitude standard deviation: 
+MeanTimeBodyAccMagStdDev 
+
+Time domain gravity acceleration magnitude mean: 
+MeanTimeGravityAccMagMean 
+
+Time domain gravity acceleration magnitude standard deviation: 
+MeanTimeGravityAccMagStdDev 
+
+Time domain body jerk magnitude mean: 
+MeanTimeBodyAccJerkMagMean 
+
+Time domain body jerk magnitude standard deviation: 
+MeanTimeBodyAccJerkMagStdDev 
+
+Time domain gyroscope magnitude mean: 
+MeanTimeBodyGyroMagMean 
+
+Time domain gyroscope magnitude standard deviation: 
+MeanTimeBodyGyroMagStdDev 
+
+Time domain gyroscope jerk magnitude mean: 
+MeanTimeBodyGyroJerkMagMean 
+
+Time domain gyroscope jerk magnitude standard deviation: 
+MeanTimeBodyGyroJerkMagStdDev 
+
+Frequency domain body acceleration mean along X, Y, and Z: 
+MeanFrequencyBodyAccMeanX 
+MeanFrequencyBodyAccMeanY 
+MeanFrequencyBodyAccMeanZ 
+
+Frequency domain body acceleration standard deviation along X, Y, and Z: 
+MeanFrequencyBodyAccStdDevX 
+MeanFrequencyBodyAccStdDevY 
+MeanFrequencyBodyAccStdDevZ
+ 
+Frequency domain body jerk mean along X, Y, and Z: 
+MeanFrequencyBodyAccJerkMeanX 
+MeanFrequencyBodyAccJerkMeanY 
+MeanFrequencyBodyAccJerkMeanZ 
+
+Frequency domain body jerk standard deviation along X, Y, and Z: 
+MeanFrequencyBodyAccJerkStdDevX 
+MeanFrequencyBodyAccJerkStdDevY 
+MeanFrequencyBodyAccJerkStdDevZ 
+
+Frequency domain gyroscope mean along X, Y, and Z: 
+MeanFrequencyBodyGyroMeanX 
+MeanFrequencyBodyGyroMeanY 
+MeanFrequencyBodyGyroMeanZ 
+
+Frequency domain gyroscope standard deviation along X, Y, and Z: 
+MeanFrequencyBodyGyroStdDevX 
+MeanFrequencyBodyGyroStdDevY 
+MeanFrequencyBodyGyroStdDevZ 
+
+Frequency domain body acceleration magnitude mean: 
+MeanFrequencyBodyAccMagMean 
+Frequency domain body acceleration magnitude standard deviation: 
+MeanFrequencyBodyAccMagStdDev 
+
+Frequency domain body jerk magnitude mean: 
+MeanFrequencyBodyAccJerkMagMean 
+
+Frequency domain body jerk magnitude standard deviation: 
+MeanFrequencyBodyAccJerkMagStdDev 
+
+Frequency domain gyroscope magnitude mean: 
+MeanFrequencyBodyGyroMagMean 
+
+Frequency domain gyroscope magnitude standard deviation: 
+MeanFrequencyBodyGyroMagStdDev 
+
+Frequency domain gyroscope jerk magnitude mean: 
+MeanFrequencyBodyGyroJerkMagMean 
+
+Frequency domain gyroscope jerk magnitude standard deviation: 
+MeanFrequencyBodyGyroJerkMagStdDev 
+
+

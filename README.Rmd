@@ -1,0 +1,33 @@
+---
+  The run_analysis.R script is one script which reads in txt files and transforms them into a tidy data set. See the Codebook.md file for more information regarding the variables and the data. 
+
+The main run_analysis.R script uses one embedded function "readData" which accepts one parameter, a path string, which indicates the path the file which is to be read.  The function is used to read all the important data needed for the calculations.
+
+The run_analysis script performs the following steps to clean the data: 
+
+1) Download and Unzip the files which contain the information needed.
+
+2) Read x_test.txt, x_train.txt from the "test" and "train" folder and store them in testData and trainData variables
+
+3) Read y_test.txt, y_train.txt from the "test" and "train" folder and store them in testLabel and trainLabel variables
+
+4) Read  subject_test.txt, subject_train.txt from the "test" and "train" folder and store them in testSubject and trainSubject variables
+
+5) Combine the test data to the train data.  Create joinData for the combined measurements, joinLabel for the combined activities, joinSubject for the combined volunteers.
+
+6) Read the features.txt file from the "/data" folder and store  in a variable called featureNames. 
+
+7) Read the activity_labels.txt file from samedirectory and store in variable called actNames
+
+8) Label the variable names for Measurements using the featureNames information.
+
+9)Create a logical vector of just the columns which contain either "mean" or "std" 
+
+10)Create a tidy set of just the means and standards by the 6 activities. 
+     a) Combine the means and standards into one data set by Activity using the logical vector.
+  b) Create averages for each of the 6 activities by using melt and dcast
+	c) Rename the first column and update the column to be indicative of the activity using the actNames.
+	d) Write out the tidy data to "tidytxtbyactivity.txt"
+
+11) Repeat step 10 to a tidy set of data which includes the means and standards of all the Volunteers(Subjects).  Write out the tidy data to ""tidytxtbysubject.txt"
+
